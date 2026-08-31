@@ -1,0 +1,81 @@
+================================================================================
+THERMOSHELTER AI — AREA-SPECIFIC PASSIVE SHELTER THERMAL DESIGN & SIMULATION PLATFORM
+================================================================================
+
+1. PROJECT OVERVIEW
+--------------------------------------------------------------------------------
+THERMOSHELTER AI (TherMusk) is an advanced web-based engineering and architectural
+simulation application designed for modeling, evaluating, and optimizing passive 
+bioclimatic shelters across extreme and diverse climate zones. 
+
+The platform bridges architectural design with numerical thermodynamic modeling, 
+allowing engineers, architects, researchers, and field disaster-relief planners 
+to construct high-efficiency shelters that maintain internal thermal comfort with 
+minimal or zero active HVAC energy consumption.
+
+
+2. CORE MODULES & FEATURES
+--------------------------------------------------------------------------------
+* 3D DIGITAL TWIN & DESIGN STUDIO:
+  - Real-time 3D WebGL (Three.js) viewport featuring realistic geometries, 
+    sun-path trajectory simulation, and customized environmental sky background.
+  - Multi-view inspection modes: Physical Architectural view, False-Color Thermal 
+    Infrared (IR) gradients, Incident Solar Rays, Airflow streamline stack-effect 
+    particles, and Exploded Layer Disassembly.
+  - Parametric controls for shelter dimensions (Length, Width, Height), azimuth 
+    orientation (True South solar alignment), window-to-wall ratios (WWR) by facade, 
+    shading overhangs, and airtightness (ACH).
+
+* TRANSIENT THERMAL SOLVER (Euler-RK4 ODE):
+  - Numerical resolution of first-law thermodynamic energy balance equations.
+  - Hourly 24-hour diurnal cycle calculations computing ambient outdoor temperature, 
+    sol-air surface temperatures, direct solar fenestration gain, envelope conduction 
+    heat loss, ventilation heat exchange, and ASHRAE 55 PMV thermal comfort index.
+
+* EVOLUTIONARY MULTI-OBJECTIVE OPTIMIZATION ENGINE:
+  - Genetic Pareto solver exploring high-dimensional parametric design spaces.
+  - Optimizes orientation, wall composite thickness, thermal mass, and glazing ratios 
+    against objectives: Balanced Net-Zero, Maximum Thermal Comfort, Minimum Heat Loss, 
+    or Maximum Solar Harvest.
+
+* MATERIALS LABORATORY & COMPOSITE ENVELOPE BUILDER:
+  - Database of regional building materials (Rammed Earth, CSEB, AAC Blocks, PUF/PIR 
+    Insulation, Rockwool, Aerogel, Timber, Straw Bale, Reflective Foil).
+  - Calculates Mackey-Wright periodic thermal admittance, total thermal resistance 
+    (R-value), overall transmittance (U-value), volumetric heat capacity, decrement 
+    damping factor (f), and diurnal thermal time lag (phase delay in hours).
+
+* CLIMATE HUB:
+  - Dedicated meteorological profiles for 6 diverse bioclimatic regions across India:
+    1. Leh, Ladakh (Cold-Arid Extreme)
+    2. Jaisalmer, Rajasthan (Hot-Arid Desert)
+    3. New Delhi (Composite Plains)
+    4. Lucknow (Subtropical Humid)
+    5. Bengaluru (Moderate Plateau)
+    6. Chennai (Warm-Humid Coastal)
+
+* SYNTHETIC DATASET EXPLORER (228 SCENARIOS):
+  - Interactive database containing 228 pre-computed parametric shelter simulations.
+  - Search, filter by climate archetype, inspect engineering metrics, and export to Excel/CSV.
+
+* BENCHMARK COMPARATOR & DESIGN REPORTS:
+  - Side-by-side comparative analytics contrasting uninsulated baseline structures 
+    against bioclimatic optimized shelters.
+  - Automated printable engineering specification reports detailing heat loss 
+    breakdowns, passive solar fraction, embodied carbon metrics, and compliance data.
+
+* ANSYS / CFD ADAPTER:
+  - Generates ready-to-run ANSYS APDL scripts and Python OpenFOAM setup code to export 
+    shelter geometries and boundary conditions directly into industrial FEA/CFD packages.
+
+
+3. TECHNOLOGY STACK
+--------------------------------------------------------------------------------
+- Frontend Framework: React 19 + TypeScript
+- Build Tool: Vite
+- Styling & UI: TailwindCSS (with glassmorphism and sky/cloud theme tokens)
+- 3D Graphics Engine: Three.js (WebGL 60FPS digital twin)
+- Data Visualization: Recharts (Dynamic diurnal temperature and heat flow graphs)
+- Icons: Lucide-React
+- Data Processing: SheetJS (XLSX)
+================================================================================
